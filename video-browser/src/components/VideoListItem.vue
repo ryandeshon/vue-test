@@ -1,5 +1,5 @@
 <template>
-    <li class="list-group-item media">
+    <li @click="onVideoSelect" class="list-group-item media">
         <img :src="videoThumbUrl" class="mr-3"/>
         <div class="media-body">{{ video.snippet.title }}</div>
     </li>
@@ -15,6 +15,11 @@ export default {
     },
     props: {
         video: Array
+    },
+    methods: {
+        onVideoSelect() {
+            this.$emit('videoSelect', this.video);
+        }
     },
 }
 </script>

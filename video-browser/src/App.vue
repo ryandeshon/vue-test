@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="container">
         <SearchBar @termChange="onTermChange"></SearchBar>
-        <VideoList></VideoList>
+        <VideoList :videos="videos"></VideoList>
     </div>
 </template>
 
@@ -19,7 +19,7 @@
         },
         data() {
             return {
-                video: []
+                videos: []
             };
         },
         methods: {

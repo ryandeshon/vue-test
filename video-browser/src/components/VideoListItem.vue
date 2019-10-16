@@ -13,12 +13,11 @@ export default {
             return this.video.snippet.thumbnails.default.url
         }
     },
-    props: {
-        video: Array
-    },
+    props: ['video'],
     methods: {
         onVideoSelect() {
             this.$emit('videoSelect', this.video);
+            console.log(this.video);
         }
     },
 }

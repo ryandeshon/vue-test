@@ -2,7 +2,7 @@
     <div v-if="video" class="col-md-8">
         <div class="details">
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" :src="video.snippet.url" frameborder="0" />
+                <iframe class="embed-responsive-item" :src="videoUrl" frameborder="0" />
             </div>
             <h4>{{ video.snippet.title }}</h4>
             <p>{{ video.snippet.descritption }}</p>
@@ -19,9 +19,7 @@ export default {
             return `https://www.youtube.com/embed/${videoId}`;
         }
     },
-    props: {
-        video: Array
-    },
+    props: ['video'],
     methods: {
     },
 }

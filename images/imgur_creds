@@ -1,2 +1,7 @@
 Client ID: cc965c2a3920553
 Client secret: defcc7c5c91ad241d72b080b6be2fe7eb8a8f3b8
+
+ https://api.imgur.com/oauth2/authorize?
+    client_id=cc965c2a3920553
+    response_type=token
+    state=APPLICATION_STATE

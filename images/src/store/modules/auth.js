@@ -3,10 +3,10 @@ import qs from "qs";
 import { router } from "../../main";
 
 const state = {
-    token: window.localStorage.getItem('imgur_token')
+    token: window.localStorage.getItem('imgur_token'),
 };
 const getters = {
-    isLoggedIn: state => !!state.token
+    isLoggedIn: state => !!state.token,
 };
 const actions = {
     logout: ({ commit }) => {
@@ -26,7 +26,7 @@ const actions = {
 const mutations = {
     setToken: (state, token) => {
         state.token = token;
-    }
+    },
 };
 
 export default {

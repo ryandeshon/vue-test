@@ -3,7 +3,6 @@ import axios from "axios";
 const CLIENT_ID = 'cc965c2a3920553';
 const ROOT_URL = 'https://api.imgur.com';
 
-
 export default {
     login() {
         const querystring = {
@@ -18,5 +17,17 @@ export default {
                 Authorization: `Bearer ${token}`
             }
         });
+    },
+    uploadImages(images, token) {
+        const promises = Array.from(images).map(image => {
+            const formData = new FormData();
+            formData.append('image', image);
+            return axios.post(`${ROOT_URL}/3/image`, formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+        });
+        return Promise.all(promises);
     }
 };

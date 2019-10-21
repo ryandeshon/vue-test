@@ -1,15 +1,42 @@
 <template>
-    <div class="">
-        UploadForm
+    <div class="dropper">
+        <input
+            type="file"
+            @change="uploadImages($event.target.files)"
+            multiple
+            accept="image/*"
+        />
+        <span>Drop image here to upload it</span>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 
 export default {
     name: 'UploadForm',
+    methods: mapActions(['uploadImages']),
 }
 </script>
 
 <style scoped>
+.dropper {
+    position: relative;
+    height: 30vh;
+    border: 2px dashed black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropper:hover {
+    background-color: #eee;
+}
+input {
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    opacity: 0;
+}
+
 </style>
